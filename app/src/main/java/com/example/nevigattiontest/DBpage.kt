@@ -7,13 +7,14 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 
 @Composable
-fun ProfilePage(navController: NavController) {
+fun DashboardPage(navController: NavController)
+{
     Column {
-        Text(text = "Profile Page")
-        Button(onClick = {
-            navController.navigate("dashboard")
-        }) {
-            Text(text = "Go to Dashboard")
-        }
+        Text(text = "Dashboard Page")
+
+        Button(onClick = { navController.navigateUp() }) { Text(text = "Go Back") }
+
+
     }
 }
+
