@@ -2,8 +2,6 @@
 
 package com.example.nevigattiontest
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -23,22 +20,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 
 
 @Composable
 fun LoginScreen(navController: NavController) {
-    var userID by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
+    var name by remember { mutableStateOf("") }
+    var phone by remember { mutableStateOf("") }
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -57,8 +49,8 @@ fun LoginScreen(navController: NavController) {
         )
 
         TextField(
-            value = userID,
-            onValueChange = { userID = it },
+            value = name,
+            onValueChange = { name = it },
             label = { Text("Enter Name") },
             modifier = Modifier
                 .fillMaxWidth()
@@ -71,8 +63,8 @@ fun LoginScreen(navController: NavController) {
         )
 
         TextField(
-            value = password,
-            onValueChange = { password = it },
+            value = phone,
+            onValueChange = { phone = it },
             label = { Text("Mobile No.") },
             modifier = Modifier
                 .fillMaxWidth()
@@ -83,9 +75,10 @@ fun LoginScreen(navController: NavController) {
                 )
         )
 
+
         // Add a login button
         Button(
-            onClick = { navController.navigate("Dashboard") },
+            onClick = { navController.navigate("Dashboard/$name/$phone") },
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
                 .padding(horizontal = 16.dp, vertical = 8.dp)
@@ -95,5 +88,4 @@ fun LoginScreen(navController: NavController) {
     }
 
 }
-
 

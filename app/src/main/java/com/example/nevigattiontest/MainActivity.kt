@@ -8,10 +8,8 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Surface
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.navigation.compose.rememberNavController
 import com.example.nevigattiontest.ui.theme.NevigattiontestTheme
 
 
@@ -24,15 +22,18 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = Color.White
+
                 ) {
                     MainApp()
+
+                }
                 }
             }
         }
     }
 
 
-}
+
 
 
 

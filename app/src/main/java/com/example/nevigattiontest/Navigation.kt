@@ -13,6 +13,6 @@ fun MainApp() {
 
     NavHost(navController = navController, startDestination = "Login") {
         composable("Login") { LoginScreen(navController) }
-        composable("Dashboard") { DashboardPage(navController) }
+        composable("Dashboard/{name}/{phone}") { DashboardPage(navController) }
     }
 }
